@@ -64,6 +64,14 @@
                         <input type="text" name="kelas" class="from-control"required>
                     </div>
                     <div class="form-group">
+                        <label for="">Jenis Kelamin</label>
+                        <input type="text" name="alamat" class="from-control"required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Alamat</label>
+                        <input type="textarea" name="alamat" class="from-control"required>
+                    </div>
+                    <div class="form-group">
                         <button class="btn btn-primary btn-block" name="simpan">Simpan</button>
                     </div>
                     </from>
@@ -77,6 +85,7 @@
                     if (isset($_POST['simpan'])) {
                         $a = $_POST['nama'];
                         $b = $_POST['kelas'];
+                        $c = $_POST['alamat'];
                     }
                 ?>
                 <div class="table-responsive">
@@ -84,10 +93,12 @@
                         <tr>
                             <th>Nama</th>
                             <th>Kelas</th>
+                            <th>Alamat</th>
                         </tr>
                         <tr>
                             <td><?php echo $a; ?></td>
                             <td><?php echo $b; ?></td>
+                            <td><?php echo $c; ?></td>
                         </tr>
                     </table>
                 </div>
