@@ -53,6 +53,7 @@
                             <th>Nilai UTS</th>
                             <th>Nilai UAS</th>
                             <th>Nilai Akhir</th>
+                            <th>Status</th>
                         </tr>
                         <?php 
                             foreach ($a as $key => $value) {
@@ -63,40 +64,20 @@
                             <td><?php echo $nilai1[$key]; $nilai = $nilai1[$key]*(60/100); ?></td>
                             <td><?php echo $uts[$key]; $uts1 = $uts[$key]*(20/100); ?></td>
                             <td><?php echo $uas[$key]; $uas1 = $uas[$key]*(20/100); ?></td>
-                            <td><?php echo $nilai+$uts1+$uas1;?></td>
+                            <?php echo $na = $nilai+$uts1+$uas1;?>
+                            <td><?php echo $na;?></td>
+                            <td><?php 
+                                if($na > 75) {
+                                    echo "<strong>LULUS</strong>";
+                                }else{
+                                    echo "<strong>TIDAK LULUS</strong>";
+                                }
+                            ?></td>
                         </tr>
                         <?php
                             }
                             ?>
-                    </table>
-                </div>
-                <br>
-                    <div>Keterangan</div>
-                    <div class="card-body">
                     
-                    <table class="table">
-                        <tr>
-                            <th>Nilai Akhir</th>
-                        </tr>
-                        <tr>
-                            <td><?php echo $n = $c + $d + $e; ?></td>
-                        </tr>
-                        <tr>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <?php 
-                                if ($n > 75) {
-                                echo "LULUS";
-                    }elseif($n <  75)
-                    echo "REMEDIAL";
-                                ?>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
                 
             </div>
         </div>
