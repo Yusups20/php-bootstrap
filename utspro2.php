@@ -13,12 +13,11 @@
         font-family: 'Chilanka',
         cursive;
     </style>
-    <title>Raport Siswa</title>
+    <title>Assalaam SHOPPING</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Assalaam Raport</a>
-        <a class="navbar-brand" href="loginrapot.php">logout</a> 
+        <a class="navbar-brand" href="#">Assalaam Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,43 +26,62 @@
             </ul>
         </div>
     </nav>
-    <center>
-        <h2>Raport Siswa</h2>
-    </center>
-    <div class="container"></div>
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card border-primary">
-                    <div class="card-header">Detail Raport Siswa</div>
+                    <div class="card-header">Detail Pembelian Barang</div>
                     <div class="card-body">
-                        <form action="tugasrapotpro2.php" method="post">
+                        <form action="utspro3.php" method="post">
                             <?php
                             if (isset($_POST['simpan'])) {
-                                $jml = $_POST['jumlah_buku'];
+                            /* Data 1 */
+                            $jml = $_POST['jumlah_buku'];
+                            $nama = $_POST['nama'];
+                            $alamat = $_POST['alamat'];
+                            $jk = $_POST['jk'];
+                            $tanggal_beli = $_POST['tanggal_beli'];
+                            /* Data 2 */
+                            $judul = $_POST['nama'];
+                            $kode = $_POST['kode'];
+                            $pengarang = $_POST['jenis'];
+                            $jenis = $_POST['harga'];
+                            $harga = $_POST['JumlahBarang'];
+
                                 for ($a = 0; $a < $jml; $a++) { ?>
                                     <div class="form-group">
-                                        <label for="">Nama</label>
-                                        <input type="text" class="form-control" name="nama[]" required>
+                                        <label for="">Nama Barang</label>
+                                        <input type="text" class="form-control" name="nama1[]" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Kelas</label>
-                                        <input type="text" class="form-control" name="kelas[]" required></i>
+                                        <label for="">Kode Barang</label>
+                                        <input type="text" class="form-control" name="kode[]" required></i>
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Nilai Harian</label>
-                                        <input type="text" class="form-control" name="nh[]" required>
+                                        <label for="" name="jenis">Jenis Barang</label>
+                                        <br>
+                                        <input type="checkbox" name="j1" value="electronic">Elektronic<br>
+                                        <input type="checkbox" name="j2" value="makanan">Makanan<br>
+                                        <input type="checkbox" name="j3" value="minuman">Minuman<br>
+                                        <input type="checkbox" name="j4" value="baju">Baju<br>
+                                        <input type="checkbox" name="j5" value="celana">Celana<br>
+                                        
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Nilai UTS</label>
-                                        <input type="number" class="form-control" name="uts[]" required>
+                                        <label for="">Jumlah Barang</label>
+                                        <input type="number" class="form-control" name="JumlahBarang[]" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Nilai UAS</label>
-                                        <input type="number" class="form-control" name="uas[]" required>
+                                        <label for="">Harga</label>
+                                        <input type="number" class="form-control" name="harga[]" required>
                                     </div>
-                                    <hr style="color: #f00;background-color: black;height: 5px;">
+                                    <hr style="color: #f00;background-color: #f00;height: 5px;">
                                 <?php } ?>
-                                
+                                <input type="hidden" name="jumlah_buku" value="<?php echo $jml ?>">
+                                <input type="hidden" name="nama" value="<?php echo $nama ?>">
+                                <input type="hidden" name="alamat" value="<?php echo $alamat ?>">
+                                <input type="hidden" name="jk" value="<?php echo $jk ?>">
+                                <input type="hidden" name="tanggal_beli" value="<?php echo $tanggal_beli ?>">
                                 <div class="form-group">
                                     <button type="submit" name="simpan" class="btn btn-outline-primary">Proses</button>
                                     <button type="reset" class="btn btn-outline-warning">Reset</button>

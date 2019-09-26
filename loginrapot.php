@@ -29,15 +29,8 @@
             echo "Login Gagal";
         }
     }elseif ($_SESSION['akseslogin']) {
-        echo"<script>alert('Anda Sudah Login');"
-        ."window.location.href='tugasrapot.php'</script>";
-    }
-?>
-<?php
-    session_start();
-    if (isset($_SESSION['akseslogin'])) {
-        unset($_SESSION);
-        session_destroy();
-        header('location:tugasrapot.php');
+        echo"<script>alert('Anda Sudah Logout');";
+    }elseif ($_SESSION['akseslogin']) {
+        echo "window.location.href='tugasrapot.php'</script>";
     }
 ?>

@@ -12,12 +12,13 @@
         font-family: 'Chilanka',
         cursive;
     </style>
-    <title>Raport Siswa</title>
+    <title>Form Data</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Assalaam</a>
-        <a class="navbar-brand" href="loginrapot.php" align:right>logout</a> 
+        <a class="navbar-brand" href="utslogin.php">Yusup Supratman</a>
+        <a class="navbar-brand" href="utslogin.php" >Home</a>
+        <a class="navbar-brand" href="utslogin.php" >logout</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,17 +28,35 @@
         </div>
     </nav>
     <center>
-        <h2>Raport Siswa</h2>
+        <h2>Produk</h2>
     </center>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card border-primary">
-                    <div class="card-header">Raport Siswa</div>
+                    <div class="card-header">Silahkan isi data diri anda</div>
                     <div class="card-body">
-                        <form action="tugasrapotpro.php" method="post">
+                    <form action="utspro2.php" method="post">
                             <div class="form-group">
-                                <label for="">Masukan Jumlah Siswa</label>
+                                <label for="">Nama</label>
+                                <input type="text" class="form-control" name="nama" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Alamat</label>
+                                <textarea class="form-control" name="alamat" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Jenis Kelamin</label>
+                                <br>
+                                <input type="radio" name="jk" value="Laki-Laki">Laki-Laki
+                                <input type="radio" name="jk" value="Perempuan">Perempuan
+                            </div>
+                            <div class="form-group">
+                                <label for="">Tanggal Pembelian</label>
+                                <input type="date" class="form-control" name="tanggal_beli" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Jumlah Barang</label>
                                 <input type="number" class="form-control" name="jumlah_buku" required>
                             </div>
                             <div class="form-group">

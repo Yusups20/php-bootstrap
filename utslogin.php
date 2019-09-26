@@ -16,8 +16,9 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Assalaam</a>
-        <a class="navbar-brand" href="loginrapot.php" align:right>logout</a> 
+        <a class="navbar-brand" href="utslogin.php">Yusup Supratman</a>
+        <a class="navbar-brand" href="utslogin.php" >Home</a>
+        <a class="navbar-brand" href="utslogin.php" >logout</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,24 +28,47 @@
         </div>
     </nav>
     <center>
-        <h2>Raport Siswa</h2>
+        <h2>ASSALAM SHOPPING</h2>
     </center>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card border-primary">
-                    <div class="card-header">Raport Siswa</div>
+                    <div class="card-header">Silahkan Login Terlebih Dahulu</div>
                     <div class="card-body">
-                        <form action="tugasrapotpro.php" method="post">
-                            <div class="form-group">
-                                <label for="">Masukan Jumlah Siswa</label>
-                                <input type="number" class="form-control" name="jumlah_buku" required>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" name="simpan" class="btn btn-outline-primary">Proses</button>
-                                <button type="reset" class="btn btn-outline-warning">Reset</button>
-                            </div>
-                        </form>
+                    <div class="container">
+        <div class="row justify-content-center">
+        <?php
+    session_start();
+?>
+
+    <pre>
+    <form action="" method="post">Email    <input type="email" name="email" required>
+                 <br>Password <input type="password" name="pass" required>
+                 <br> <input type="submit" value="login" name="akses">
+    </form>
+
+
+<?php
+    if (isset($_POST['akses'])) {
+        $a = $_POST['email'];
+        $b = $_POST['pass'];
+        if ($a == "yusup@gmail.com" && $b == "123456") {
+            $_SESSION['akseslogin'] = 'Admin';
+            header("location:utspro.php");
+        }else {
+            echo "Login Gagal";
+        }
+    }elseif ($_SESSION['akseslogin']) {
+        echo"<script>alert('Anda Sudah Logout');";
+    }elseif ($_SESSION['akseslogin']) {
+        echo "window.location.href='utslogin.php'</script>";
+    }
+?>
+            </div>
+        </div>
+    </div>
+                   
                     </div>
                 </div>
             </div>
