@@ -13,11 +13,13 @@
         font-family: 'Chilanka',
         cursive;
     </style>
-    <title>Assalaam SHOPPING</title>
+    <title>Yusup SHOPPING</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Assalaam Store</a>
+    <a class="navbar-brand" href="utslogin.php">Yusup Supratman</a>
+        <a class="navbar-brand" href="utslogin.php" >Home</a>
+        <a class="navbar-brand" href="utslogin.php" >logout</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,14 +60,14 @@
                                         <input type="text" class="form-control" name="kode[]" required></i>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" name="jenis">Jenis Barang</label>
-                                        <br>
-                                        <input type="checkbox" name="j1" value="electronic">Elektronic<br>
-                                        <input type="checkbox" name="j2" value="makanan">Makanan<br>
-                                        <input type="checkbox" name="j3" value="minuman">Minuman<br>
-                                        <input type="checkbox" name="j4" value="baju">Baju<br>
-                                        <input type="checkbox" name="j5" value="celana">Celana<br>
-                                        
+                                    <label for="">Jenis Barang</label>
+                                        <select name="jenis[]" class="form-control">
+                                        <option>Elektronic</option>
+                                        <option>Makanan</option>
+                                        <option>Minuman</option>
+                                        <option>Baju</option>
+                                        <option>Celana</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Jumlah Barang</label>

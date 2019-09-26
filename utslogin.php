@@ -53,11 +53,11 @@
     if (isset($_POST['akses'])) {
         $a = $_POST['email'];
         $b = $_POST['pass'];
-        if ($a == "yusup@gmail.com" && $b == "123456") {
+        if ($a == "yusup@gmail.com" && $b == "2092003") {
             $_SESSION['akseslogin'] = 'Admin';
             header("location:utspro.php");
         }else {
-            echo "Login Gagal";
+            echo "Login Gagal Karena PASSWORD Atau EMAIL Salah :(";
         }
     }elseif ($_SESSION['akseslogin']) {
         echo"<script>alert('Anda Sudah Logout');";

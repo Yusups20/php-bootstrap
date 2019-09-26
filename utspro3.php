@@ -13,11 +13,13 @@
         font-family: 'Chilanka',
         cursive;
     </style>
-    <title>Detail Pembelian</title>
+    <title>Yusup Shopping</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Yusup</a>
+    <a class="navbar-brand" href="utslogin.php">Yusup Supratman</a>
+        <a class="navbar-brand" href="utslogin.php" >Home</a>
+        <a class="navbar-brand" href="utslogin.php" >logout</a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +29,7 @@
         </div>
     </nav>
     <center>
-        <h2>Assalaam Book Store</h2>
+        <h2>Detail Pembelian</h2>
     </center>
     <div class="container">
         <div class="row justify-content-center">
@@ -74,7 +76,7 @@
                                     <th>Nama Barang</th>
                                     <th>Kode Barang</th>
                                     <th>Jenis Barang</th>
-                                    <th>Harga (Rp)</th>
+                                    <th>Harga Satuan(Rp)</th>
                                     <th>Jumlah</th>
                                     
                                 </tr>
@@ -84,44 +86,26 @@
                                     <tr>
                                         <td><?php echo $judul[$a]; ?></td>
                                         <td><?php echo $kode[$a]; ?></td>
-                                        <td><?php
-                                             
-                                             echo "Jenis Barang $pengarang[$a] :<br>";
-                                             if (isset($_POST['j1'])) {
-                                             echo "> " . $_POST['j1'] . "<br>";
-                                             }
-                                             if (isset($_POST['j2'])) {
-                                             echo "> " . $_POST['j2'] . "<br>";
-                                             }
-                                             if (isset($_POST['j3'])) {
-                                             echo "> " . $_POST['j3'] . "<br>";
-                                             }
-                                             if (isset($_POST['j4'])) {
-                                             echo "> " . $_POST['j4'] . "<br>";
-                                             }
-                                             if (isset($_POST['j5'])) {
-                                             echo "> " . $_POST['j5'] . "<br>";
-                                             
-                                             }
-                                             ?>
+                                        <td><?php echo $pengarang[$a];
+                                             ?></td>
                                         <td><?php echo $jenis[$a]; ?></td>
                                         <td><?php echo $harga[$a]; ?></td>
                                         <td><?php echo number_format($harga[$a], 2, ',', '.') ?></td>
-                                        <?php $sub_total = $sub_total + $harga[$a]; ?>
+                                        <?php $sub_total = $harga[$a]* $jenis[$a]; ?>
                                     </tr>
                                 <?php
                                 }
-                                if ($harga >= 150000) {
-                                    $diskon = $sub_total * 0.5;
+                                if ($sub_total >= 150000) {
+                                    $diskon = $sub_total * 0.5/100;
                                     /* var_dump($diskon); */
+                                    $desc = 5;
+                                } else if ($sub_total >= 250000) {
+                                    $diskon = $sub_total * 0.10/100;
                                     $desc = 10;
-                                } else if ($harga >= 250000) {
-                                    $diskon = $sub_total * 0.10;
-                                    $desc = 5;
                                     /* var_dump($diskon); */
-                                }else if ($harga >= 500000) {
-                                    $diskon = $sub_total * 0.20;
-                                    $desc = 5;
+                                }else if ($sub_total >= 500000) {
+                                    $diskon = $sub_total * 0.20/100;
+                                    $desc = 20;
                                     /* var_dump($diskon); */
                                 }else {
                                     $diskon = 0;
@@ -145,6 +129,19 @@
                                     <th>Total Pembayaran</th>
                                     <td colspan="5" align="right">Rp. <?php echo number_format($total, 0, ',', '.') ?></td>
                                 </tr>
+                                <tr>
+                                <form action="utspro4.php" method="post">
+                                <tr>
+                                    <td colspan="6" align="center"><b>Pembayaran</b></td>
+                                </tr>
+                                <td><center><div class="form-group">
+                                <label >Masukan Jumlah Uang Anda</label>
+                                <input type="number" class="form-control" name="uang" required>
+                            </div></center></td>
+                                <tr></tr>
+                                <td><button type="submit" name="bayar" class="btn btn-outline-primary">Bayar</button></></td>
+                                </tr>
+                                </form>
                             </table>
                         </div>
                     </div>

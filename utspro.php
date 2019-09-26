@@ -12,7 +12,7 @@
         font-family: 'Chilanka',
         cursive;
     </style>
-    <title>Form Data</title>
+    <title>Yusup Shopping</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,7 +28,7 @@
         </div>
     </nav>
     <center>
-        <h2>Produk</h2>
+        <h2>Data Pembeli</h2>
     </center>
     <div class="container">
         <div class="row justify-content-center">
